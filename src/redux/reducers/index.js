@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import test from './testReducer';
-import premieres from './PremieresReducer';
+import premieres from './premieresReducer';
 import next_premieres from './nextPremieresReducer';
 import credits from './CreditsReducer';
 import movie_details from './movieDetailReducer';

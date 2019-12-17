@@ -1,18 +1,13 @@
-import type from "../actions/type";
+import { createReducer } from "redux-starter-kit";
+import { GET_NEXT_PREMIERES_FULFILLED } from "../actions/moviesActions";
 
 const initialState = {
   data: []
 };
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case type.GET_NEXT_PREMIERES_FULFILLED:
-      const {results} = action.payload.data
-      return Object.assign({}, state, {
-        data: results,
-      });
-
-    default:
-      return state;
+export default createReducer(initialState, {
+  [GET_NEXT_PREMIERES_FULFILLED]: (state, action) => {
+    const { results } = action.payload.data;
+    state.data = results;
   }
-};
+});

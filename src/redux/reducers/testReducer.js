@@ -1,4 +1,4 @@
-import types from '../actions/type'
+import types from '../actions/moviesActions'
 
 const initialState = {
   test: "Start Redux",

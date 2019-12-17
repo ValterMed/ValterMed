@@ -1,18 +1,13 @@
-import type from "../actions/type";
+import { createReducer } from "redux-starter-kit";
+import { GET_MOVIE_DETAILS_FULFILLED } from "../actions/moviesActions";
 
 const initialState = {
   data: []
 };
 
-export default (state = initialState, action) => {
-  switch (action.type) {
-    case type.GET_MOVIE_DETAILS_FULFILLED:
-      const {data} = action.payload
-      return Object.assign({}, state, {
-        data
-      });
-
-    default:
-      return state;
+export default createReducer(initialState, {
+  [GET_MOVIE_DETAILS_FULFILLED]: (state, action) => {
+    const { data } = action.payload;
+    state.data = data;
   }
-};
+});

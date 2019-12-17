@@ -1,4 +1,4 @@
-import type from './type';
+import type from './moviesActions';
 import axios from 'axios';
 
 const UrlBase = "https://api.themoviedb.org/3/movie/";
