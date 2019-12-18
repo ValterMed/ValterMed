@@ -1,12 +1,12 @@
 import { createReducer } from "redux-starter-kit";
-import { GET_SEARCH_FULFILLED } from "../actions/moviesActions";
+import { getSearch } from "../actions/moviesActions";
 
 const initialState = {
   data: []
 };
 
 export default createReducer(initialState, {
-  [GET_SEARCH_FULFILLED]: (state, action) => {
+  [getSearch]: (state, action) => {
     const { results } = action.payload.data;
     state.data = results;
   }

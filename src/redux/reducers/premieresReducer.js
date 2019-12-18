@@ -1,5 +1,5 @@
 import { createReducer } from "redux-starter-kit";
-import { GET_PREMIERES_FULFILLED } from "../actions/moviesActions";
+import { getPremieres } from "../actions/moviesActions";
 
 const initialState = {
   data: [],
@@ -7,7 +7,8 @@ const initialState = {
 };
 
 export default createReducer(initialState, {
-  [GET_PREMIERES_FULFILLED]: (state, action) => {
+  [getPremieres]: (state, action) => {
+    console.log(action.payload.data);
     const { results } = action.payload.data;
     const outstandMovie = results[Math.floor(Math.random() * results.length)];
     state.data = results;

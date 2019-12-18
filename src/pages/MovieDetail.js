@@ -18,32 +18,7 @@ class MovieDetail extends React.Component {
     this.props.getMovieDetails(movieID);
     this.props.getCredits(movieID);
   }
-  // getMovieDetail = async movieID => {
-  //   try {
-  //     const result = await axios.get(
-  //       `https://api.themoviedb.org/3/movie/${movieID}?api_key=f5b812340cf6ce25dc4cf8d4722c5f56&language=es`
-  //     );
-  //     console.log(result);
-  //     this.setState({
-  //       movie: result.data
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-  // getCredits = async movieID => {
-  //   try {
-  //     const result = await axios.get(
-  //       `https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=f5b812340cf6ce25dc4cf8d4722c5f56&language=es`
-  //     );
-  //     console.log(result);
-  //     this.setState({
-  //       cast: result.data.cast
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+  
   render() {
     return (
       <div>

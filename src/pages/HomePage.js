@@ -1,92 +1,86 @@
-import React from "react";
-// import axios from "axios";
-import Outstand from "../components/Outstand";
-import Premiere from "../components/Premiere";
+// import Outstand from "../components/Outstand";
+// import Premiere from "../components/Premiere";
+// import { connect } from "react-redux";
+// import { getPremieres, getNextPremieres } from "../redux/creators/moviesActionsCreators";
+// import ShowSearchResults from "../components/ShowSearchResults";
+import React, { useEffect } from "react";
 import StyledTitle from "../components/StyledTitle";
-import { connect } from "react-redux";
-import { getPremieres, getNextPremieres } from "../redux/actions/MoviesActions";
 import Header from "../components/Header";
-import ShowSearchResults from "../components/ShowSearchResults";
-class HomePage extends React.Component {
-  // state = {
-  //   outstandMovie: "",
-  //   next_premieres: []
-  // };
+import {
+  updatePremiere,
+  updateNextPremieres
+} from "../redux/creators/moviesActionsCreators";
+import { useDispatch, useSelector } from "react-redux";
+import { premiereSelector } from "../redux/selectors/premiereSelector";
+import { nextPremiereSelector } from "../redux/selectors/nextPremiereSelector";
+import { searchSelector } from "../redux/selectors/searchSelector";
 
-  componentDidMount() {
-    this.props.getPremieres();
-    this.props.getNextPremieres();
-    // this.getData();
-  }
-  // getNextPremieres = async () => {
-  //   try {
-  //     const results = await axios.get(
-  //       "https://api.themoviedb.org/3/movie/upcoming?api_key=f5b812340cf6ce25dc4cf8d4722c5f56&language=es"
-  //     );
-  //     this.setState({
-  //       next_premieres: results.data.results
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-  // getData = async () => {
-  //   try {
-  //     const results = await axios.get(
-  //       "https://api.themoviedb.org/3/movie/now_playing?api_key=f5b812340cf6ce25dc4cf8d4722c5f56&language=es"
-  //     );
-  //     this.setOutstandMovie(results.data.results);
-  //     this.setState({
-  //       movies: results.data.results
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
-  // setOutstandMovie(movies) {
-  //   const outstandMovie = movies[Math.floor(Math.random() * movies.length)];
-  //   this.setState({
-  //     outstandMovie
-  //   });
-  // }
+export default () => {
+  const dispatch = useDispatch();
+  const premiereHandler = useSelector(premiereSelector);
+  const nextPremiereHandler = useSelector(nextPremiereSelector)
+  const searchHandler = useSelector(searchSelector);
 
-  renderSearchResults() {
-    const { data } = this.props.search;
-    if (data.length === 0) {
+  useEffect(() => {
+    dispatch(updatePremiere());
+    dispatch(updateNextPremieres());
+  }, []);
+
+  const renderSearchResults = () => {
+    if (searchHandler.data.length === 0) {
       return (
         <div>
-          <Outstand movie={this.props.premieres.outstandMovie} />
+          <p>no hay resultados de busqueda</p>
+          {/* <Outstand movie={this.props.premieres.outstandMovie} />
           <StyledTitle>Premieres:</StyledTitle>
           <Premiere movies={this.props.premieres.data} />
           <StyledTitle>Upcomming:</StyledTitle>
-          <Premiere movies={this.props.next_premieres.data} />
+          <Premiere movies={this.props.next_premieres.data} /> */}
         </div>
       );
     } else {
-      return <ShowSearchResults data={data} />;
+      // return <ShowSearchResults data={data} />;
+      return <p>Mostrando Resultados</p>
     }
   }
 
-  render() {
-    return (
-      <div>
-        <Header path={this.props.match.path} />
-        {this.renderSearchResults()}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <StyledTitle>Pruebas</StyledTitle>
+      {renderSearchResults()}
+    </div>
+  );
+};
 
-function mapStateToProps({ premieres, next_premieres, search }) {
-  //comunicacion con el almacen central de redux
-  return {
-    premieres,
-    next_premieres,
-    search
-  };
-}
+// class HomePage extends React.Component {
+//   componentDidMount() {
+//     this.props.getPremieres();
+//     this.props.getNextPremieres();
+//   }
 
-export default connect(mapStateToProps, {
-  getPremieres,
-  getNextPremieres
-})(HomePage);
+//   renderSearchResults() {
+//     const { data } = this.props.search;
+//     if (data.length === 0) {
+//       return (
+//         <div>
+//           <Outstand movie={this.props.premieres.outstandMovie} />
+//           <StyledTitle>Premieres:</StyledTitle>
+//           <Premiere movies={this.props.premieres.data} />
+//           <StyledTitle>Upcomming:</StyledTitle>
+//           <Premiere movies={this.props.next_premieres.data} />
+//         </div>
+//       );
+//     } else {
+//       return <ShowSearchResults data={data} />;
+//     }
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <Header path={this.props.match.path} />
+//         {this.renderSearchResults()}
+//       </div>
+//     );
+//   }
+// }

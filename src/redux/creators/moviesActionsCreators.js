@@ -1,34 +1,52 @@
 import axios from "axios";
-import { GET_PREMIERES } from "../actions/moviesActions";
-import { GET_NEXT_PREMIERES } from "../actions/moviesActions";
 import { GET_CREDITS } from "../actions/moviesActions";
 import { GET_MOVIE_DETAILS } from "../actions/moviesActions";
-import { GET_SEARCH } from "../actions/moviesActions";
-import { CLEAR_SEARCH } from "../actions/moviesActions";
 import { updateDate } from "../actions/moviesActions";
+import { getPremieres } from "../actions/moviesActions";
+import { getNextPremieres } from "../actions/moviesActions";
+import { getSearch } from "../actions/moviesActions";
+import { clearSearch } from "../actions/moviesActions";
 
 const UrlBase = "https://api.themoviedb.org/3/movie/";
 const UrlSearch = "https://api.themoviedb.org/3/search/movie";
 const key = "f5b812340cf6ce25dc4cf8d4722c5f56&language=es";
 
-export const getDate = () => dispatch => {
-  console.log("estamos en creators")
-  dispatch(updateDate({ newDate: new Date(), newMessage: "update redux" }));
+// export const getDate = () => function (dispatch) {
+//   console.log("estamos en creators");
+//   const newDate = new Date();
+//   dispatch(updateDate({ newDate: newDate.toString(), newMessage: "update redux" }));
+// };
+
+export const updatePremiere = () => dispatch => {
+  fetch(`${UrlBase}now_playing?api_key=${key}`)
+    .then(data => data.json())
+    .then(premiere => {
+      console.log(premiere);
+      dispatch(getPremieres({ data: premiere }));
+    });
 };
 
-// export const getPremieres = () => dispatch => {
-//   dispatch({
-//     type: type.GET_PREMIERES,
-//     payload: axios.get(`${UrlBase}now_playing?api_key=${key}`)
-//   });
-// };
+export const updateNextPremieres = () => dispatch => {
+  fetch(`${UrlBase}upcoming?api_key=${key}`)
+    .then(data => data.json())
+    .then(next_premiere => {
+      console.log(next_premiere);
+      dispatch(getNextPremieres({ data: next_premiere }));
+    });
+};
 
-// export const getNextPremieres = () => dispatch => {
-//   dispatch({
-//     type: type.GET_NEXT_PREMIERES,
-//     payload: axios.get(`${UrlBase}upcoming?api_key=${key}`)
-//   });
-// };
+export const updateSearch = text => dispatch => {
+  fetch(`${UrlSearch}?query=${text}&api_key=${key}`)
+    .then(data => data.json())
+    .then(found_movie => {
+      console.log(found_movie);
+      dispatch(getSearch({ data: found_movie }));
+    });
+};
+
+export const searchReset = () => {
+  clearSearch()
+};
 
 // export const getCredits = movieID => dispatch => {
 //   dispatch({
@@ -44,15 +62,3 @@ export const getDate = () => dispatch => {
 //   });
 // };
 
-// export const getSearch = text => dispatch => {
-//   dispatch({
-//     type: type.GET_SEARCH,
-//     payload: axios.get(`${UrlSearch}?query=${text}&api_key=${key}`)
-//   });
-// };
-
-// export const clearSearch = () => {
-//   return {
-//     type: type.CLEAR_SEARCH
-//   };
-// };
