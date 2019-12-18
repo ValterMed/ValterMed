@@ -4,15 +4,15 @@ import movieDetailReducer from "../reducers/movieDetailReducer";
 import nextPremieresReducer from "../reducers/nextPremieresReducer";
 import premieresReducer from "../reducers/premieresReducer";
 import searchReducer from "../reducers/searchReducer";
-import testReducer from "../reducers/testReducer";
+import updateDateReducer from "../reducers/updateDateReducer";
 
 export default configureStore({
   reducer: {
     credits: creditsReducer,
-    movie_details: movieDetailReducer,
-    next_premieres: nextPremieresReducer,
+    movieDetails: movieDetailReducer,
+    nextPremieres: nextPremieresReducer,
     premieres: premieresReducer,
     search: searchReducer,
-    test: testReducer
+    date: updateDateReducer
   }
 });

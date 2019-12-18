@@ -1,6 +1,6 @@
 import { createAction } from 'redux-starter-kit';
 
-export const UPDATE_DATE = createAction('UPDATE_DATE');
+export const updateDate = createAction('updateDate');
 export const GET_PREMIERES = createAction('GET_PREMIERES');
 export const GET_PREMIERES_PENDING = createAction('GET_PREMIERES_PENDING');
 export const GET_PREMIERES_FULFILLED = createAction('GET_PREMIERES_FULFILLED');
