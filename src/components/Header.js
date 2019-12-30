@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Search from "./Search";
-import { connect } from "react-redux";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import Hour from "./Hour";
 
-//Actions
 import {
   updateSearch,
   searchReset
@@ -24,13 +23,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledDate = styled.div`
-  color: red;
-  font-size: 16px;
-  font-weight: bold;
-`;
-
-export default (props) => {
+export default props => {
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
 
@@ -38,7 +31,6 @@ export default (props) => {
     const { value } = evt.target;
     if (value) {
       dispatch(updateSearch(value));
-      // this.props.getSearch(value)
       setSearchText(value);
     } else {
       onClearTextSearch();
@@ -46,7 +38,7 @@ export default (props) => {
   };
   const onClearTextSearch = () => {
     setSearchText("");
-    searchReset();
+    dispatch(updateSearch());
   };
 
   return (
@@ -59,7 +51,7 @@ export default (props) => {
           search_text={searchText}
         />
       )}
-      {/* <StyledDate> {this.props.test.date.toString()} </StyledDate> */}
+      <Hour />
     </StyledContainer>
   );
 };

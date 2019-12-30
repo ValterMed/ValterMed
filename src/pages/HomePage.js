@@ -1,8 +1,6 @@
-// import Outstand from "../components/Outstand";
-// import Premiere from "../components/Premiere";
-// import { connect } from "react-redux";
-// import { getPremieres, getNextPremieres } from "../redux/creators/moviesActionsCreators";
-// import ShowSearchResults from "../components/ShowSearchResults";
+import Outstand from "../components/Outstand";
+import Premiere from "../components/Premiere";
+import ShowSearchResults from "../components/ShowSearchResults";
 import React, { useEffect } from "react";
 import StyledTitle from "../components/StyledTitle";
 import Header from "../components/Header";
@@ -15,72 +13,36 @@ import { premiereSelector } from "../redux/selectors/premiereSelector";
 import { nextPremiereSelector } from "../redux/selectors/nextPremiereSelector";
 import { searchSelector } from "../redux/selectors/searchSelector";
 
-export default () => {
+export default props => {
   const dispatch = useDispatch();
   const premiereHandler = useSelector(premiereSelector);
-  const nextPremiereHandler = useSelector(nextPremiereSelector)
+  const nextPremiereHandler = useSelector(nextPremiereSelector);
   const searchHandler = useSelector(searchSelector);
 
   useEffect(() => {
     dispatch(updatePremiere());
     dispatch(updateNextPremieres());
   }, []);
-
+  
   const renderSearchResults = () => {
     if (searchHandler.data.length === 0) {
       return (
         <div>
-          <p>no hay resultados de busqueda</p>
-          {/* <Outstand movie={this.props.premieres.outstandMovie} />
+          <Outstand movie={premiereHandler.outstandMovie} />
           <StyledTitle>Premieres:</StyledTitle>
-          <Premiere movies={this.props.premieres.data} />
+          <Premiere movies={premiereHandler.data} />
           <StyledTitle>Upcomming:</StyledTitle>
-          <Premiere movies={this.props.next_premieres.data} /> */}
+          <Premiere movies={nextPremiereHandler.data} />
         </div>
       );
     } else {
-      // return <ShowSearchResults data={data} />;
-      return <p>Mostrando Resultados</p>
+      return <ShowSearchResults data={searchHandler.data} />;
     }
-  }
-
+  };
   return (
     <div>
-      <StyledTitle>Pruebas</StyledTitle>
+      <Header path={props.match.path} />
       {renderSearchResults()}
     </div>
   );
 };
-
-// class HomePage extends React.Component {
-//   componentDidMount() {
-//     this.props.getPremieres();
-//     this.props.getNextPremieres();
-//   }
-
-//   renderSearchResults() {
-//     const { data } = this.props.search;
-//     if (data.length === 0) {
-//       return (
-//         <div>
-//           <Outstand movie={this.props.premieres.outstandMovie} />
-//           <StyledTitle>Premieres:</StyledTitle>
-//           <Premiere movies={this.props.premieres.data} />
-//           <StyledTitle>Upcomming:</StyledTitle>
-//           <Premiere movies={this.props.next_premieres.data} />
-//         </div>
-//       );
-//     } else {
-//       return <ShowSearchResults data={data} />;
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <Header path={this.props.match.path} />
-//         {this.renderSearchResults()}
-//       </div>
-//     );
-//   }
-// }

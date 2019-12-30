@@ -38,10 +38,3 @@ export default ({onChangeSearch, clear, search_text}) => (
     </StyledClearButton>
   </StyledContainerSearch>
   )
-
-//Sintaxis de las arrow functions:
-//si se utliza corchetes en la funcion de flecha entonces se debe
-//de utilizar return
-//Si utilizamos parentesis entonces ya no se utiliza el return
-// si se escribe solo una linea se pueden omitir los parentesis/corchetes pero usar punto y coma
-// export default () => <StyledContainerSearch>Search</StyledContainerSearch>;
