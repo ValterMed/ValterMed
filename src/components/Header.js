@@ -23,6 +23,12 @@ const StyledContainer = styled.div`
   }
 `;
 
+const StyledTitle = styled.a`
+  text-decoration: none;
+  color: red;
+  margin-left: 50px;
+`;
+
 export default props => {
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
@@ -43,7 +49,9 @@ export default props => {
 
   return (
     <StyledContainer>
-      <h3>That`s My Movie</h3>
+      <StyledTitle href="/">
+        <h3>That`s My Movie</h3>
+      </StyledTitle>
       {props.path === "/" && (
         <Search
           onChangeSearch={onChangeSearch}
