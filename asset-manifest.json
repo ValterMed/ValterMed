@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/ValterMed/static/js/main.fbbc0fae.chunk.js",
+    "main.js.map": "/ValterMed/static/js/main.fbbc0fae.chunk.js.map",
+    "runtime-main.js": "/ValterMed/static/js/runtime-main.4bab4081.js",
+    "runtime-main.js.map": "/ValterMed/static/js/runtime-main.4bab4081.js.map",
+    "static/css/2.2bc875f3.chunk.css": "/ValterMed/static/css/2.2bc875f3.chunk.css",
+    "static/js/2.9c28c0d4.chunk.js": "/ValterMed/static/js/2.9c28c0d4.chunk.js",
+    "static/js/2.9c28c0d4.chunk.js.map": "/ValterMed/static/js/2.9c28c0d4.chunk.js.map",
+    "index.html": "/ValterMed/index.html",
+    "precache-manifest.8dfbcd1887bb2980de3bccedee0b5614.js": "/ValterMed/precache-manifest.8dfbcd1887bb2980de3bccedee0b5614.js",
+    "service-worker.js": "/ValterMed/service-worker.js",
+    "static/css/2.2bc875f3.chunk.css.map": "/ValterMed/static/css/2.2bc875f3.chunk.css.map",
+    "static/media/font-awesome.min.css": "/ValterMed/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bab4081.js",
+    "static/css/2.2bc875f3.chunk.css",
+    "static/js/2.9c28c0d4.chunk.js",
+    "static/js/main.fbbc0fae.chunk.js"
+  ]
+}
