@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 
 const StyledDate = styled.div`
-  color: red;
+  color: gold;
   font-size: 16px;
   font-weight: bold;
 `;

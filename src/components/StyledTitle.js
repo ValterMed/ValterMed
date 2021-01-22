@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledTitle = styled.h1`
-  background: rgba(120,144,156,1);
+  background: rgb(0, 27, 40);
   color: white;
   margin: 0;
   padding: 12px;

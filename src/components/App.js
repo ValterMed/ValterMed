@@ -18,7 +18,7 @@ export default () => {
       <BrowserRouter>
         <GlobalStyle />
         <div>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/ValterMed" component={HomePage} />
           <Route path="/details/:movieID" component={MovieDetail}></Route>
         </div>
       </BrowserRouter>
