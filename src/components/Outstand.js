@@ -34,7 +34,7 @@ const StyledMovieInfo = styled(Link)`
 `;
 
 const StyledMovieTitle = styled.h1`
-  color: rgba(205, 179, 0, 1);
+  color: #FFD700;
   font-family: "Rock Salt", cursive;
 `;
 
