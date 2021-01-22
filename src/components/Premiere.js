@@ -6,7 +6,7 @@ const imageUrlBase = "https://image.tmdb.org/t/p/w154";
 
 const StyledContainer = styled.div`
   > ul {
-    background: rgba(66, 165, 245, 1);
+    background: rgba(0, 0, 0);
     padding-left: 0;
     overflow: scroll;
     display: flex;
@@ -26,9 +26,11 @@ const StyledMovie = styled(Link)`
   font-family: "Acme", sans-serif;
   font-size: 25px;
   font-weight: bold;
+  text-decoration: none;
   >span {
     display: none;
-    background: rgba(38,50,56,0.5);
+    background: rgba(38,50,56,0.6);
+    color: gold;
   }
   &:hover {
     >span {
