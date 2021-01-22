@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.js": "/ValterMed/static/js/main.fbbc0fae.chunk.js",
-    "main.js.map": "/ValterMed/static/js/main.fbbc0fae.chunk.js.map",
-    "runtime-main.js": "/ValterMed/static/js/runtime-main.4bab4081.js",
-    "runtime-main.js.map": "/ValterMed/static/js/runtime-main.4bab4081.js.map",
-    "static/css/2.2bc875f3.chunk.css": "/ValterMed/static/css/2.2bc875f3.chunk.css",
-    "static/js/2.9c28c0d4.chunk.js": "/ValterMed/static/js/2.9c28c0d4.chunk.js",
-    "static/js/2.9c28c0d4.chunk.js.map": "/ValterMed/static/js/2.9c28c0d4.chunk.js.map",
+    "main.js": "/ValterMed/static/js/main.698967fd.chunk.js",
+    "main.js.map": "/ValterMed/static/js/main.698967fd.chunk.js.map",
+    "runtime-main.js": "/ValterMed/static/js/runtime-main.457b1979.js",
+    "runtime-main.js.map": "/ValterMed/static/js/runtime-main.457b1979.js.map",
+    "static/css/2.9ee4bfa9.chunk.css": "/ValterMed/static/css/2.9ee4bfa9.chunk.css",
+    "static/js/2.0b49c647.chunk.js": "/ValterMed/static/js/2.0b49c647.chunk.js",
+    "static/js/2.0b49c647.chunk.js.map": "/ValterMed/static/js/2.0b49c647.chunk.js.map",
     "index.html": "/ValterMed/index.html",
-    "precache-manifest.8dfbcd1887bb2980de3bccedee0b5614.js": "/ValterMed/precache-manifest.8dfbcd1887bb2980de3bccedee0b5614.js",
-    "service-worker.js": "/ValterMed/service-worker.js",
-    "static/css/2.2bc875f3.chunk.css.map": "/ValterMed/static/css/2.2bc875f3.chunk.css.map",
-    "static/media/font-awesome.min.css": "/ValterMed/static/media/fontawesome-webfont.fee66e71.woff"
+    "static/css/2.9ee4bfa9.chunk.css.map": "/ValterMed/static/css/2.9ee4bfa9.chunk.css.map",
+    "static/js/2.0b49c647.chunk.js.LICENSE.txt": "/ValterMed/static/js/2.0b49c647.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/ValterMed/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.4bab4081.js",
-    "static/css/2.2bc875f3.chunk.css",
-    "static/js/2.9c28c0d4.chunk.js",
-    "static/js/main.fbbc0fae.chunk.js"
+    "static/js/runtime-main.457b1979.js",
+    "static/css/2.9ee4bfa9.chunk.css",
+    "static/js/2.0b49c647.chunk.js",
+    "static/js/main.698967fd.chunk.js"
   ]
 }
