@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ValterMed/static/js/main.135ffb7e.chunk.js",
-    "main.js.map": "/ValterMed/static/js/main.135ffb7e.chunk.js.map",
+    "main.js": "/ValterMed/static/js/main.44100c21.chunk.js",
+    "main.js.map": "/ValterMed/static/js/main.44100c21.chunk.js.map",
     "runtime-main.js": "/ValterMed/static/js/runtime-main.457b1979.js",
     "runtime-main.js.map": "/ValterMed/static/js/runtime-main.457b1979.js.map",
     "static/css/2.9ee4bfa9.chunk.css": "/ValterMed/static/css/2.9ee4bfa9.chunk.css",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.457b1979.js",
     "static/css/2.9ee4bfa9.chunk.css",
     "static/js/2.968d6e6a.chunk.js",
-    "static/js/main.135ffb7e.chunk.js"
+    "static/js/main.44100c21.chunk.js"
   ]
 }
