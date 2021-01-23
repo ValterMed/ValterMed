@@ -49,7 +49,7 @@ export default props => {
 
   return (
     <StyledContainer>
-      <StyledTitle href="/">
+      <StyledTitle href="/ValterMed">
         <h3>That`s My Movie</h3>
       </StyledTitle>
       {props.path === "/" && (
